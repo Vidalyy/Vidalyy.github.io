@@ -35,10 +35,10 @@ const valueProps = [
     <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
       <a href="/" class="text-lg font-semibold tracking-tight">Vidalyy</a>
       <nav class="flex items-center gap-6 text-sm">
-        <a href="#features" class="text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground)">Features</a>
-        <a href="#why" class="text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground)">Why</a>
-        <a href="#how" class="text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground)">How it works</a>
-        <a href="#waitlist" class="rounded-md border border-(--color-accent)/40 bg-(--color-accent)/10 px-3 py-1.5 text-(--color-accent) transition-colors hover:bg-(--color-accent)/20">Join waitlist</a>
+        <a href="#features" class="hidden text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground) sm:inline">Features</a>
+        <a href="#why" class="hidden text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground) sm:inline">Why</a>
+        <a href="#how" class="hidden text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground) sm:inline">How it works</a>
+        <a href="#waitlist" class="header-cta rounded-md border border-(--color-accent)/40 bg-(--color-accent)/10 px-3 py-1.5 text-(--color-accent) transition-colors hover:bg-(--color-accent)/20">Join waitlist</a>
       </nav>
     </div>
   </header>
@@ -222,7 +222,7 @@ const valueProps = [
           </li>
           <li class="reveal flex gap-5" style="transition-delay: 160ms">
             <span class="mt-0.5 inline-flex h-9 w-9 flex-none items-center justify-center rounded-full border border-(--color-accent)/40 bg-(--color-accent)/10 text-base font-semibold text-(--color-accent)">2</span>
-            <div>
+            <div class="min-w-0 flex-1">
               <p class="text-lg font-medium">Drop the loader on your page.</p>
               <p class="mt-2 text-base leading-relaxed text-(--color-muted-foreground)">
                 Paste this once in your <code>&lt;head&gt;</code>, replacing <code>VIDALY_ID</code> with your tracking id.
