@@ -31,7 +31,7 @@ const valueProps = [
 ---
 
 <Layout>
-  <header class="sticky top-0 z-30 border-b border-(--color-border)/60 bg-(--color-background)/70 backdrop-blur-md">
+  <header id="site-header" class="nav-bar fixed inset-x-0 top-0 z-30">
     <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
       <a href="/" class="text-lg font-semibold tracking-tight">Vidalyy</a>
       <nav class="flex items-center gap-6 text-sm">
@@ -51,7 +51,7 @@ const valueProps = [
   </header>
 
   <main>
-    <section class="relative overflow-hidden bg-black text-white">
+    <section id="hero" class="relative flex min-h-screen items-center overflow-hidden bg-black text-white">
       <video
         id="hero-video"
         class="absolute inset-0 h-full w-full object-cover"
@@ -71,7 +71,7 @@ const valueProps = [
       </div>
       <div
         id="hero-content"
-        class="relative z-10 mx-auto max-w-5xl px-6 py-24 sm:py-32"
+        class="relative z-10 mx-auto w-full max-w-5xl px-6 py-24 sm:py-32"
       >
         <p class="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-sm text-white/80 backdrop-blur-sm">
           Currently in alpha
@@ -123,7 +123,7 @@ const valueProps = [
       </a>
     </section>
 
-    <section id="features" class="relative border-t border-(--color-border)/60">
+    <section id="features" class="relative scroll-mt-20 border-t border-(--color-border)/60">
       <div class="mx-auto max-w-5xl px-6 py-24">
         <h2 class="reveal text-3xl font-semibold tracking-tight sm:text-4xl">What you get</h2>
         <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -142,7 +142,7 @@ const valueProps = [
       </div>
     </section>
 
-    <section id="why" class="relative border-t border-(--color-border)/60">
+    <section id="why" class="relative scroll-mt-20 border-t border-(--color-border)/60">
       <div class="mx-auto max-w-5xl px-6 py-24">
         <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -216,7 +216,7 @@ const valueProps = [
       </div>
     </section>
 
-    <section id="how" class="border-t border-(--color-border)/60">
+    <section id="how" class="scroll-mt-20 border-t border-(--color-border)/60">
       <div class="mx-auto max-w-5xl px-6 py-24">
         <h2 class="reveal text-3xl font-semibold tracking-tight sm:text-4xl">How it works</h2>
         <ol class="mt-12 space-y-8">
@@ -298,10 +298,21 @@ const valueProps = [
         targets.forEach((t) => io.observe(t));
       }
 
+      // Header transparency toggle — opaque after any scroll past the top.
+      const header = document.getElementById('site-header');
+      const updateHeader = () => {
+        if (!header) return;
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+      };
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+
       // Hero parallax — disabled for reduced motion.
       if (prefersReduced.matches) return;
       const heroContent = document.getElementById('hero-content');
       if (!video && !heroContent) return;
+
+      const fadeRange = () => Math.max(window.innerHeight * 0.75, 400);
 
       let ticking = false;
       const onScroll = () => {
@@ -314,7 +325,7 @@ const valueProps = [
           }
           if (heroContent) {
             heroContent.style.transform = `translate3d(0, ${y * -0.18}px, 0)`;
-            heroContent.style.opacity = String(Math.max(0, 1 - y / 520));
+            heroContent.style.opacity = String(Math.max(0, 1 - y / fadeRange()));
           }
           ticking = false;
         });
