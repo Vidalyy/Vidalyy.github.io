@@ -38,7 +38,7 @@ const valueProps = [
         <a href="#features" class="hidden text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground) sm:inline">Features</a>
         <a href="#why" class="hidden text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground) sm:inline">Why</a>
         <a href="#how" class="hidden text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground) sm:inline">How it works</a>
-        <a href="#waitlist" class="header-cta rounded-md border border-(--color-accent)/40 bg-(--color-accent)/10 px-3 py-1.5 text-(--color-accent) transition-colors hover:bg-(--color-accent)/20">Join waitlist</a>
+        <a href="https://app.vidalyy.com" class="header-cta rounded-md border border-(--color-accent)/40 bg-(--color-accent)/10 px-3 py-1.5 text-(--color-accent) transition-colors hover:bg-(--color-accent)/20">Get started</a>
       </nav>
     </div>
   </header>
@@ -79,10 +79,10 @@ const valueProps = [
         </p>
         <div class="mt-10 flex flex-wrap items-center gap-4">
           <a
-            href="#waitlist"
+            href="https://app.vidalyy.com"
             class="group inline-flex items-center gap-2 rounded-md bg-(--color-accent) px-6 py-3 text-base font-medium text-(--color-accent-foreground) shadow-[0_0_30px_-8px_var(--color-accent-glow)] transition-all hover:brightness-110 hover:shadow-[0_0_40px_-4px_var(--color-accent-glow)]"
           >
-            Join the waitlist
+            Start in 5 minutes
             <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
           </a>
           <a
@@ -228,17 +228,7 @@ const valueProps = [
                 Paste this once in your <code>&lt;head&gt;</code>, replacing <code>VIDALY_ID</code> with your tracking id.
                 Every <code>&lt;video&gt;</code> on the page gets watched-segment tracking automatically.
               </p>
-              <pre class="card-surface mt-4 overflow-x-auto rounded-md p-5 text-sm leading-relaxed text-(--color-foreground)/90"><code>{`<script id="vidalyy">
-(function(w,d,s,l,i){
-  w[l]=w[l]||function(){(w[l].q=w[l].q||[]).push(arguments)};
-  w[l].id=i; w[l].t=+new Date;
-  var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s);
-  j.async=true; j.src='https://cdn.vidalyy.example/collector.min.js';
-  j.setAttribute('data-vidaly-id',i);
-  f.parentNode.insertBefore(j,f);
-})(window,document,'script','vidalyy','VIDALY_ID');
-</script>`}</code></pre>
+              <pre class="card-surface mt-4 overflow-x-auto rounded-md p-5 text-sm leading-relaxed text-(--color-foreground)/90"><code>{`<script src="https://collector.vidalyy.com/loader.min.js" data-vidaly-id="VIDALY_ID" async></script>`}</code></pre>
             </div>
           </li>
           <li class="reveal flex gap-5" style="transition-delay: 240ms">
@@ -254,172 +244,29 @@ const valueProps = [
       </div>
     </section>
 
-    <section id="waitlist" class="relative scroll-mt-20 border-t border-(--color-border)/60">
+    <section id="get-started" class="relative scroll-mt-20 border-t border-(--color-border)/60">
       <div class="mx-auto max-w-3xl px-6 py-24 text-center">
         <p class="reveal text-base font-semibold uppercase tracking-[0.22em] text-(--color-accent) sm:text-lg">
-          Join the waitlist
+          Get started
         </p>
         <h2 class="reveal mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-          Get an invite when we open access.
+          Sign in and start tracking in under five minutes.
         </h2>
         <p class="reveal mt-6 text-pretty text-lg leading-relaxed text-(--color-muted-foreground)">
-          We&rsquo;ll email you exactly once — when Vidalyy is ready for you
-          to try. No drip campaigns, no sales follow-up.
+          Create an organization, copy the loader, paste it into your site. No
+          credit card, no sales call.
         </p>
 
-        <div class="reveal newsletter-form-container mx-auto mt-10 w-full max-w-md">
-          <form
-            class="newsletter-form flex w-full flex-col gap-3 sm:flex-row"
-            action="https://app.loops.so/api/newsletter-form/cmp0yanyb1rku0hylu9hxysbz"
-            method="POST"
+        <div class="reveal mt-10">
+          <a
+            href="https://app.vidalyy.com"
+            class="group inline-flex items-center gap-2 rounded-md bg-(--color-accent) px-6 py-3 text-base font-medium text-(--color-accent-foreground) shadow-[0_0_30px_-8px_var(--color-accent-glow)] transition-all hover:brightness-110 hover:shadow-[0_0_40px_-4px_var(--color-accent-glow)]"
           >
-            <input
-              class="newsletter-form-input w-full flex-1 rounded-md border border-(--color-border) bg-(--color-surface) px-4 py-3 text-base text-(--color-foreground) placeholder:text-(--color-muted-foreground) focus:border-(--color-accent) focus:outline-none focus:ring-2 focus:ring-(--color-accent-glow)"
-              name="newsletter-form-input"
-              placeholder="you@work.com"
-              required
-              type="email"
-            />
-            <button
-              class="newsletter-form-button group inline-flex items-center justify-center gap-2 rounded-md bg-(--color-accent) px-6 py-3 text-base font-medium text-(--color-accent-foreground) shadow-[0_0_30px_-8px_var(--color-accent-glow)] transition-all hover:brightness-110 hover:shadow-[0_0_40px_-4px_var(--color-accent-glow)]"
-              type="submit"
-            >
-              Join waitlist
-              <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
-            </button>
-            <button
-              class="newsletter-loading-button inline-flex items-center justify-center rounded-md bg-(--color-accent)/70 px-6 py-3 text-base font-medium text-(--color-accent-foreground)"
-              type="button"
-              style="display: none"
-            >
-              Please wait…
-            </button>
-          </form>
-          <div class="newsletter-success mt-4" style="display: none">
-            <p class="newsletter-success-message text-base text-(--color-accent)">
-              Thanks — you&rsquo;re on the list. We&rsquo;ll be in touch.
-            </p>
-          </div>
-          <div class="newsletter-error mt-4" style="display: none">
-            <p class="newsletter-error-message text-base text-red-400">
-              Oops, something went wrong. Try again?
-            </p>
-          </div>
-          <button
-            class="newsletter-back-button mt-3 text-sm text-(--color-muted-foreground) transition-colors hover:text-(--color-foreground)"
-            type="button"
-            style="display: none"
-          >
-            &larr; Back
-          </button>
+            Start in 5 minutes
+            <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+          </a>
         </div>
       </div>
-      <script is:inline>
-        (function () {
-          function submitHandler(event) {
-            event.preventDefault();
-            var container = event.target.parentNode;
-            var form = container.querySelector('.newsletter-form');
-            var formInput = container.querySelector('.newsletter-form-input');
-            var success = container.querySelector('.newsletter-success');
-            var errorContainer = container.querySelector('.newsletter-error');
-            var errorMessage = container.querySelector('.newsletter-error-message');
-            var backButton = container.querySelector('.newsletter-back-button');
-            var submitButton = container.querySelector('.newsletter-form-button');
-            var loadingButton = container.querySelector('.newsletter-loading-button');
-
-            var rateLimit = function () {
-              errorContainer.style.display = 'flex';
-              errorMessage.innerText = 'Too many signups, please try again in a little while';
-              submitButton.style.display = 'none';
-              formInput.style.display = 'none';
-              backButton.style.display = 'block';
-            };
-
-            var time = new Date();
-            var timestamp = time.valueOf();
-            var previousTimestamp = localStorage.getItem('loops-form-timestamp');
-            if (previousTimestamp && Number(previousTimestamp) + 60000 > timestamp) {
-              rateLimit();
-              return;
-            }
-            localStorage.setItem('loops-form-timestamp', timestamp);
-
-            submitButton.style.display = 'none';
-            loadingButton.style.display = 'inline-flex';
-
-            var formBody =
-              'userGroup=&mailingLists=&email=' + encodeURIComponent(formInput.value);
-
-            fetch(event.target.action, {
-              method: 'POST',
-              body: formBody,
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            })
-              .then(function (res) {
-                return [res.ok, res.json(), res];
-              })
-              .then(function (parts) {
-                var ok = parts[0];
-                var dataPromise = parts[1];
-                var res = parts[2];
-                if (ok) {
-                  success.style.display = 'block';
-                  form.reset();
-                } else {
-                  dataPromise.then(function (data) {
-                    errorContainer.style.display = 'block';
-                    errorMessage.innerText = data.message ? data.message : res.statusText;
-                  });
-                }
-              })
-              .catch(function (error) {
-                if (error.message === 'Failed to fetch') {
-                  rateLimit();
-                  return;
-                }
-                errorContainer.style.display = 'block';
-                if (error.message) errorMessage.innerText = error.message;
-                localStorage.setItem('loops-form-timestamp', '');
-              })
-              .finally(function () {
-                formInput.style.display = 'none';
-                loadingButton.style.display = 'none';
-                backButton.style.display = 'inline-block';
-              });
-          }
-
-          function resetFormHandler(event) {
-            var container = event.target.parentNode;
-            var formInput = container.querySelector('.newsletter-form-input');
-            var success = container.querySelector('.newsletter-success');
-            var errorContainer = container.querySelector('.newsletter-error');
-            var errorMessage = container.querySelector('.newsletter-error-message');
-            var backButton = container.querySelector('.newsletter-back-button');
-            var submitButton = container.querySelector('.newsletter-form-button');
-
-            success.style.display = 'none';
-            errorContainer.style.display = 'none';
-            errorMessage.innerText = 'Oops! Something went wrong, please try again';
-            backButton.style.display = 'none';
-            formInput.style.display = 'block';
-            submitButton.style.display = 'inline-flex';
-          }
-
-          var formContainers = document.getElementsByClassName('newsletter-form-container');
-          for (var i = 0; i < formContainers.length; i++) {
-            var formContainer = formContainers[i];
-            if (formContainer.classList.contains('newsletter-handlers-added')) continue;
-            formContainer
-              .querySelector('.newsletter-form')
-              .addEventListener('submit', submitHandler);
-            formContainer
-              .querySelector('.newsletter-back-button')
-              .addEventListener('click', resetFormHandler);
-            formContainer.classList.add('newsletter-handlers-added');
-          }
-        })();
-      </script>
     </section>
   </main>
 
